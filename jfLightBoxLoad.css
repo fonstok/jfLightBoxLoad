@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.lb_lightbox, .lb_lightbox > div {
+	box-sizing:border-box;
+}
+.lb_loadanimation {
+	background-image: url("images/spinner.svg");
+	width:80px;
+	height: 80px;
+	text-indent: -999em;
+	background-repeat: no-repeat;
+	background-size: contain;
+	/* center */
+	position: absolute;
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+}
+/* light box */
+.lb_lightbox {
+	position:fixed;
+	/* z-index needs to be higher than any other elements in your page */
+	z-index:200;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+}
+.lb_shade {
+	position:absolute;
+	z-index:inherit;	
+	width:100%;
+	height:100%;
+	background-color:#000;
+	cursor:pointer;
+	opacity: 0.43;
+}
+
+/* main window */
+.lb_window {
+	position:absolute;
+	z-index:inherit;
+	width:80%;
+	height:80%;
+	max-width: 900px;
+	max-height: 700px;
+	padding:40px;
+	/* center */
+	left:50%;
+	top:50%;
+	transform: translate(-50%,-50%);	
+	background-color:#FFFFFF;
+	border-radius: 19px; 
+}
+.lb_content {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.lb_closeBtn {
+	position: absolute;
+	top: 10px;
+	right: 5px;	
+	width:50px;
+	height:50px;
+	cursor:pointer;
+}
+
+
+

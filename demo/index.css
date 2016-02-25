@@ -1,0 +1,11 @@
+body {
+	margin: 0px;
+	padding: 0px;
+	font-family: Arial;
+}
+#shell {
+	width: 900px;
+	margin-right: auto;
+	margin-left: auto;
+}
+

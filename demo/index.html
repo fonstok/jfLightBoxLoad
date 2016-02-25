@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<title>Interactive Design Senior Show</title>
+<link href="../jfLightBoxLoad.css" rel="stylesheet" type="text/css" />
+<link href="index.css" rel="stylesheet" type="text/css" />
+
+<script src="http://code.jquery.com/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="../jquery.jfLightBoxLoad.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $('.lbox').jfLightBoxLoad({
+    animationFrom:{opacity:'0', top:'80%'},
+    animationTo:{opacity:'1', top:'50%'},
+    pathToTransit:'https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js',
+    ease:'easeInOutBack',
+  });
+  $('.dragg').draggable({
+    stop:function(e){
+      $(this).data('jfLightBoxLoad').launch();
+    }
+  });
+});
+</script>
+
+
+</head>
+
+<body>
+<div id="shell">
+  <div id="first">
+    <h1>jfLightBoxLoad</h1>
+    <ul>
+      <li><a class="lbox" href="external.html">Load From Anchor Click</a></li>
+      <li data-load-event="mouseup" data-iframe="true" data-hash="external.html" class="lbox" >Load on Mouseup</li>
+      <li class="lbox dragg" data-load-event="none" data-path-to-script="external.js" data-hash="external.html">Load on Dragg Stop</li>
+    </ul>    
+
+  </div> 
+</div>
+</body>
+</html>
