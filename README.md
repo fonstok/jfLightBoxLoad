@@ -56,7 +56,7 @@ The loading window fades in by default, but you can pass it From and To properti
 * __ease:__ *none*
 	* You can pass the animation an ease, but you need to link to a library such as, jqueryUI, that has ease options.
 
-#### Other External File Options
+#### Other Options
 * __pathToScript:__ *null*
 	* For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not necessarily the page you're loading.
 * __useTransit:__ *false*
