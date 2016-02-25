@@ -31,18 +31,37 @@ Just follow these steps to enable:
     $(".lbLoad").jfLightBoxLoad();
     ```
 
-## Defaults and Options
-* __loadElement:__ "body"
-* __hash:__ $element.attr('href')
-* __loadEvent:__ 'click'
-* __ease:__''
-* __animationFrom:__ {}
-* __animationTo:__ {}
-* __pause:__ 100
-* __speed:__ 500
-* __pathToScript:__ null,
-* __pathToTransit:__ null
-* __iframe:__ false
+## Options and Defaults
+__Options__ and *Defaults*
+### Basics
+* __loadElement:__ *"body"*
+  * The element you want the light box to be loaded into.
+* __hash:__ *$element.attr('href')*
+  * The path to the file you want loaded. The default is the href attribute of an anchor, but this can be changed.  
+* __loadEvent:__ *'click'*
+  * The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event set this to 'none' and use the public function launch().
+* __iframe:__ *false*
+	* If you'd like to use an iframe set this to true.
+
+### Window Animation
+The loading window fades in by default, but you can pass it From and To properties via lists to change its animation in and out. The out will be the reverse of what ever you set.
+* __animationFrom:__ *{}*
+	* The load window's animation starting properties.
+* __animationTo:__ *{}*
+	* The load window's animation ending properties.
+* __pause:__ *100* 
+	* Pause time before the window comes in.
+* __speed:__ *500*
+	* Speed of window animation
+* __ease:__*none*
+	* You can pass it the animation an ease, but you need to link to a library such as, jqueryUI, that has ease options.
+
+### External Paths
+* __pathToScript:__ *null*
+	* For straight loading you may want to trigger an external script. You pass the path here. Keep in mind that that path is relative to the page you're loading into, not nessassarily the page you're loading.
+* __pathToTransit:__ *null*
+	* Transit.js is a nice css3 animation library. If you include a path to it, all the animations will be CSS3 instead of the older animate funciton. <a href="http://ricostacruz.com/jquery.transit/">http://ricostacruz.com/jquery.transit/</a>
+
 
 ### Options as Arguments
 Options can be passed as arguments through the init function.
