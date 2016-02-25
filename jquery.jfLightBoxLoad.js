@@ -6,6 +6,7 @@
              element = element;
         var $ldElement;
         var dataatts = $element.data();
+        var win = false;
 
         var defaults = {
             loadElement: 'body',
@@ -16,7 +17,7 @@
             animationTo:{},
             pause:100,
             speed:500,
-            ease:'',
+            ease:'swing',
             pathToScript:null,
             pathToTransit:null,
         }
@@ -29,23 +30,23 @@
             if (plugin.settings.pathToTransit){
                 $.getScript(plugin.settings.pathToTransit, function( data, textStatus, jqxhr ) {
                   $.fn.animate = $.fn.transition;
-                  console.log('work')
                 });
             }
 			
 			if (plugin.settings.event != 'none'){
-				$element.bind(plugin.settings.mouseEvent, function(event){
-					event.preventDefault();              
-					lightBoxAcivate();
-				});
+				$element.bind(plugin.settings.mouseEvent, mouseE)
 			}
         }
-		plugin.launch = function(){
+		
+        // mouse event
+        function mouseE(event){
+            event.preventDefault();              
             lightBoxAcivate();
-		};
+        };
 
         // JavaScript Document
         function lightBoxAcivate(){
+            win = true;
             // make tags
             $ldElement.prepend('<div class="lb_lightbox"></div>');
             $lb = $('.lb_lightbox');  
@@ -90,9 +91,23 @@
         }
         // delete the tags
         function closeLB(){
+            win = false;
             $('.lb_content').unload();
             $('.lb_closeBtn, .lb_shade').unbind('click');
             $lb.remove();  
+        }  
+        // public functions
+        plugin.launch = function(){
+            lightBoxAcivate();
+        };
+
+        plugin.destroy = function(){
+            if (win){
+                closeLB();
+            }  
+            $element.unbind(plugin.settings.mouseEvent, mouseE)
+            $element.removeData('jfLightBoxLoad', plugin);
+            plugin = null;
         }  
         plugin.init();
     }
