@@ -80,7 +80,7 @@ $('.lbLoad').jfLightBoxLoad({
 ```
 	
 ### Options as Data Attributes
-Options can also be passed through data attributes in opening of the parent element. __Notice that the data attributes use dashes instead of camel case__.
+Options can also be passed through data attributes in opening of the responsable element. __Notice that the data attributes use dashes instead of camel case__.
 ```html
 <div class="lbLoad" 
 	data-load-event="mouseover" 
