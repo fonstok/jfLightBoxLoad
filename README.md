@@ -4,11 +4,11 @@ jQuery plugin that loads external files via ajax loading or an iframe with a lig
 ##Note
 Because it uses ajax loading, to test locally, you will need either allow local file access or use a local server like MAMP.
 ###Launch Chrome with allow file access
-* <a href="http://www.chrome-allow-file-access-from-file.com/">http://www.chrome-allow-file-access-from-file.com/</a>
-* <a href="http://blog.derraab.com/2013/05/30/start-google-chrome-with-local-file-access-on-mac-os-x/">http://blog.derraab.com/2013/05/30/start-google-chrome-with-local-file-access-on-mac-os-x/</a>
+* http://www.chrome-allow-file-access-from-file.com/
+* http://blog.derraab.com/2013/05/30/start-google-chrome-with-local-file-access-on-mac-os-x/
 
 ###MAMP
-* <a href="https://www.mamp.info/en/">https://www.mamp.info/en/</a>
+* https://www.mamp.info/en/
 
 
 ## Script Set Up
@@ -33,17 +33,17 @@ Just follow these steps to enable:
 
 ## Options and Defaults
 __Options__ and *Defaults*
-### Basics
+#### Basics
 * __loadElement:__ *"body"*
   * The element you want the light box to be loaded into.
 * __hash:__ *$element.attr('href')*
-  * The path to the file you want loaded. The default is the href attribute of an anchor, but this can be changed.  
+  * The path to the file you want loaded. The default assumes you're using an anchor element so it refrences an href attribute. But, as an option, you can use any element.  
 * __loadEvent:__ *'click'*
-  * The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event set this to 'none' and use the public function launch().
+  * The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event, set this to 'none' and use the public function launch() when you want to the stuff to launch.
 * __iframe:__ *false*
 	* If you'd like to use an iframe set this to true.
 
-### Window Animation
+#### Window Animation
 The loading window fades in by default, but you can pass it From and To properties via lists to change its animation in and out. The out will be the reverse of what ever you set.
 * __animationFrom:__ *{}*
 	* The load window's animation starting properties.
@@ -52,21 +52,31 @@ The loading window fades in by default, but you can pass it From and To properti
 * __pause:__ *100* 
 	* Pause time before the window comes in.
 * __speed:__ *500*
-	* Speed of window animation
+	* Speed of window animation.
 * __ease:__*none*
 	* You can pass it the animation an ease, but you need to link to a library such as, jqueryUI, that has ease options.
 
-### External Paths
+#### Other External File Options
 * __pathToScript:__ *null*
-	* For straight loading you may want to trigger an external script. You pass the path here. Keep in mind that that path is relative to the page you're loading into, not nessassarily the page you're loading.
+	* For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not nessassarily the page you're loading.
 * __pathToTransit:__ *null*
-	* Transit.js is a nice css3 animation library. If you include a path to it, all the animations will be CSS3 instead of the older animate funciton. <a href="http://ricostacruz.com/jquery.transit/">http://ricostacruz.com/jquery.transit/</a>
+	* Transit.js is a nice css3 animation library. If you include a path to it, all the animations will be CSS3 instead of the older animate funciton. http://ricostacruz.com/jquery.transit/
 
 
 ### Options as Arguments
 Options can be passed as arguments through the init function.
 ```js
-
+$('.lbLoad').jfLightBoxLoad({
+	iframe:true,
+	loadEvent:'mouseover',
+	animationFrom:{opacity:'0', top:'80%'},
+	animationTo:{opacity:'1', top:'50%'},
+	pause:0,
+	speed:250,
+	ease:'easeInOutBack',
+	pathToScript:'externalScript.js',
+	pathToTransit:'https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js',
+  });
 ```
 	
 ### Options as Data Attributes
