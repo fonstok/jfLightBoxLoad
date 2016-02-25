@@ -21,7 +21,7 @@ $(document).ready(function() {
     pathToTransit:'https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js',
     ease:'easeInOutBack',
   });
-  
+    
   $('.dragg').draggable({
     stop:function(e){
       $(this).data('jfLightBoxLoad').launch();
@@ -39,8 +39,8 @@ $(document).ready(function() {
     <h1>jfLightBoxLoad</h1>
     <ul>
       <li><a class="lboxBasic" href="external.html">Load From Anchor Click</a></li>
-      <li data-load-event="mouseup" data-iframe="true" data-hash="external.html" class="lboxAdvanced" >Load on Mouseup</li>
-      <li class="lboxAdvanced dragg" data-load-event="none" data-path-to-script="external.js" data-hash="external.html">Load on Dragg Stop</li>
+      <li class="lboxAdvanced" data-mouse-event="mouseup" data-iframe="true" data-hash="external.html">Load on Mouseup</li>
+      <li class="lboxAdvanced dragg" data-mouse-event="none" data-path-to-script="external.js" data-hash="external.html">Load on Dragg Stop</li>
     </ul>    
 
   </div> 

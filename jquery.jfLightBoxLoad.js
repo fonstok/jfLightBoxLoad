@@ -10,15 +10,15 @@
         var defaults = {
             loadElement: "body",
             hash:$element.attr('href'),
-            loadEvent:'click',
-            ease:'',
+            mouseEvent:'click',
+            iframe:false,
             animationFrom:{},
             animationTo:{},
             pause:100,
             speed:500,
+            ease:'',
             pathToScript:null,
             pathToTransit:null,
-            iframe:false,
         }
         plugin.settings = {};
 
@@ -34,7 +34,7 @@
             }
 			
 			if (plugin.settings.event != 'none'){
-				$element.bind(plugin.settings.loadEvent, function(event){
+				$element.bind(plugin.settings.mouseEvent, function(event){
 					event.preventDefault();              
 					lightBoxAcivate();
 				});
