@@ -19,7 +19,7 @@
             speed:500,
             ease:'swing',
             pathToScript:null,
-            pathToTransit:null,
+            useTransit:false,
         }
         plugin.settings = {};
 
@@ -27,31 +27,27 @@
             plugin.settings = $.extend({}, defaults, options, dataatts);             
             $ldElement = $(plugin.settings.loadElement);
 
-            if (plugin.settings.pathToTransit){
-                $.getScript(plugin.settings.pathToTransit, function( data, textStatus, jqxhr ) {
-                  $.fn.animate = $.fn.transition;
-                });
-            }
-			
+            if (plugin.settings.useTransit){
+                $.fn.animate = $.fn.transition;
+            }	
 			if (plugin.settings.event != 'none'){
-				$element.bind(plugin.settings.mouseEvent, mouseE)
+				$element.bind(plugin.settings.mouseEvent, onMouse)
 			}
         }
-		
         // mouse event
-        function mouseE(event){
+        function onMouse(event){
             event.preventDefault();              
             lightBoxAcivate();
         };
 
-        // JavaScript Document
+        // activate
         function lightBoxAcivate(){
             win = true;
             // make tags
             $ldElement.prepend('<div class="lb_lightbox"></div>');
             $lb = $('.lb_lightbox');  
             $lb.append('<div class="lb_shade"></div><div class="lb_loadanimation">loading</div>');
-
+            // iframe?
             if (plugin.settings.iframe){
                 $lb.append('<div class="lb_window"><iframe frameborder="0" src ='+plugin.settings.hash+' width="100%" height:"100%" class="lb_content"></iframe><div class="lb_closeBtn">close</div></div>');
             } else {
@@ -65,7 +61,6 @@
             } else {
                 $('.lb_content').load(loadComplete);
             }
-
             $lbshd = $('.lb_shade');
             $lbshd.css({opacity:'0'});
             $lbshd.animate({opacity:'1'}, plugin.settings.speed);
@@ -105,7 +100,7 @@
             if (win){
                 closeLB();
             }  
-            $element.unbind(plugin.settings.mouseEvent, mouseE)
+            $element.unbind(plugin.settings.mouseEvent, onMouse)
             $element.removeData('jfLightBoxLoad', plugin);
             plugin = null;
         }  
