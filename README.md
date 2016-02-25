@@ -39,7 +39,7 @@ __Options__ and *Defaults*
 * __hash:__ *$element.attr('href')*
   * The path to the file you want loaded. The default assumes you're using an anchor element so it references an href attribute. But, as an option, you can use any element.  
 * __mouseEvent:__ *'click'*
-  * The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event, set this to 'none' and use the public function launch() when you want to the stuff to launch.
+  * The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event, set this to 'none' and use the public function launch() when you want the file to launch and load.
 * __iframe:__ *false*
 	* If you'd like to use an iframe set this to true.
 
