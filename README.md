@@ -3,11 +3,11 @@ jQuery plugin that loads external files via ajax loading or an iframe with a lig
 
 ##Note
 Because it uses ajax loading, to test locally, you will need either allow local file access or use a local server like MAMP.
-###Launch Chrome with allow file access
+####Launch Chrome with allow file access
 * http://www.chrome-allow-file-access-from-file.com/
 * http://blog.derraab.com/2013/05/30/start-google-chrome-with-local-file-access-on-mac-os-x/
 
-###MAMP
+####MAMP
 * https://www.mamp.info/en/
 
 
@@ -91,7 +91,7 @@ Options can also be passed through data attributes in opening of the responsible
 
 ## Public functions
 There is a public function that can be called.
-* launch(): This function can be called to launch the window. It's handy for launching on a unique event like drag stop. You will most likely need to disable the click functionality by setting the __loadEvent__:"none".
+* launch(): This function can be called to launch the external filled associated with the element it's attached to. It's handy for launching on a unique event like drag stop or drop. You will most likely need to disable the click functionality by setting the __loadEvent__ to "none".
 
 ```js
 $(".lbLoad").data("jfLightBoxLoad").launch();
