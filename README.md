@@ -12,7 +12,7 @@ Because it uses ajax loading, to test locally, you will need either allow local 
 
 
 ## Script Set Up
-Just follow these steps to enable the magnify effect:
+Just follow these steps to enable:
 
 1. Include jQuery on your page.
 
