@@ -82,12 +82,16 @@ $('.lbLoad').jfLightBoxLoad({
 ### Options as Data Attributes
 Options can also be passed through data attributes in opening of the parent element. __Notice that the data attributes use dashes instead of camel case__.
 ```html
-
+<div class="lbLoad" 
+	data-load-event="mouseover" 
+	data-hash="externalFile.html"
+	data-path-to-script="externalScript.js"
+>Mouse Over Me</div>
 ```
 
 ## Public functions
 There is a public function that can be called.
-* launch(): This function can be called to launch the window. It's handy for launching on a unique event like drag stop.
+* launch(): This function can be called to launch the window. It's handy for launching on a unique event like drag stop. You will most likely need to disable the click functionality by setting the __loadEvent__:"none".
 
 ```js
 $(".lbLoad").data("jfLightBoxLoad").launch();
