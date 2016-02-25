@@ -26,7 +26,7 @@ Just follow these steps to enable:
     <script src="jquery.jfLightBoxLoad.js"></script>
     ```
 
-3. Init the plugin by attaching it the elements you want responsable for launching external files.
+3. Init the plugin by attaching it the elements you want responsible for launching external files.
     ```js
     $(".lbLoad").jfLightBoxLoad();
     ```
@@ -34,10 +34,10 @@ Just follow these steps to enable:
 ## Options and Defaults
 __Options__ and *Defaults*
 #### Basics
-* __loadElement:__ *"body"*
+* __loadElement:__ *'body'*
   * The element you want the light box to be loaded into.
 * __hash:__ *$element.attr('href')*
-  * The path to the file you want loaded. The default assumes you're using an anchor element so it refrences an href attribute. But, as an option, you can use any element.  
+  * The path to the file you want loaded. The default assumes you're using an anchor element so it references an href attribute. But, as an option, you can use any element.  
 * __mouseEvent:__ *'click'*
   * The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event, set this to 'none' and use the public function launch() when you want to the stuff to launch.
 * __iframe:__ *false*
@@ -53,14 +53,14 @@ The loading window fades in by default, but you can pass it From and To properti
 	* Pause time before the window comes in.
 * __speed:__ *500*
 	* Speed of window animation.
-* __ease:__*none*
-	* You can pass it the animation an ease, but you need to link to a library such as, jqueryUI, that has ease options.
+* __ease:__ *none*
+	* You can pass the animation an ease, but you need to link to a library such as, jqueryUI, that has ease options.
 
 #### Other External File Options
 * __pathToScript:__ *null*
-	* For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not nessassarily the page you're loading.
+	* For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not necessarily the page you're loading.
 * __pathToTransit:__ *null*
-	* Transit.js is a nice css3 animation library. If you include a path to it, all the animations will be CSS3 instead of the older animate funciton. http://ricostacruz.com/jquery.transit/
+	* Transit.js is a nice css3 jQuery animation library. If you include a path to it, all of the animations will be CSS3 instead of the older jQuery animate method. http://ricostacruz.com/jquery.transit/
 
 
 ### Options as Arguments
@@ -80,7 +80,7 @@ $('.lbLoad').jfLightBoxLoad({
 ```
 	
 ### Options as Data Attributes
-Options can also be passed through data attributes in opening of the responsable element. __Notice that the data attributes use dashes instead of camel case__.
+Options can also be passed through data attributes in opening of the responsible element. __Notice that the data attributes use dashes instead of camel case__.
 ```html
 <div class="lbLoad" 
 	data-mouse-event="mouseover" 

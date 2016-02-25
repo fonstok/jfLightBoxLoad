@@ -8,7 +8,7 @@
         var dataatts = $element.data();
 
         var defaults = {
-            loadElement: "body",
+            loadElement: 'body',
             hash:$element.attr('href'),
             mouseEvent:'click',
             iframe:false,
