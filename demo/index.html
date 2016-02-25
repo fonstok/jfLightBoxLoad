@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="apple-mobile-web-app-capable" content="yes"/>
-<title>Interactive Design Senior Show</title>
+<title>jfLightBoxLoad</title>
 <link href="../jfLightBoxLoad.css" rel="stylesheet" type="text/css" />
 <link href="index.css" rel="stylesheet" type="text/css" />
 
@@ -13,12 +13,15 @@
 
 <script type="text/javascript">
 $(document).ready(function() {
-  $('.lbox').jfLightBoxLoad({
+  $('.lboxBasic').jfLightBoxLoad({});
+
+  $('.lboxAdvanced').jfLightBoxLoad({
     animationFrom:{opacity:'0', top:'80%'},
     animationTo:{opacity:'1', top:'50%'},
     pathToTransit:'https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js',
     ease:'easeInOutBack',
   });
+  
   $('.dragg').draggable({
     stop:function(e){
       $(this).data('jfLightBoxLoad').launch();
@@ -35,9 +38,9 @@ $(document).ready(function() {
   <div id="first">
     <h1>jfLightBoxLoad</h1>
     <ul>
-      <li><a class="lbox" href="external.html">Load From Anchor Click</a></li>
-      <li data-load-event="mouseup" data-iframe="true" data-hash="external.html" class="lbox" >Load on Mouseup</li>
-      <li class="lbox dragg" data-load-event="none" data-path-to-script="external.js" data-hash="external.html">Load on Dragg Stop</li>
+      <li><a class="lboxBasic" href="external.html">Load From Anchor Click</a></li>
+      <li data-load-event="mouseup" data-iframe="true" data-hash="external.html" class="lboxAdvanced" >Load on Mouseup</li>
+      <li class="lboxAdvanced dragg" data-load-event="none" data-path-to-script="external.js" data-hash="external.html">Load on Dragg Stop</li>
     </ul>    
 
   </div> 
