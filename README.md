@@ -75,7 +75,7 @@ $('.lbLoad').jfLightBoxLoad({
 	speed:250,
 	ease:'easeInOutBack',
 	pathToScript:'externalScript.js',
-	pathToTransit:'https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js',
+	useTransit:true,
   });
 ```
 	
