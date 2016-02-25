@@ -38,7 +38,7 @@ __Options__ and *Defaults*
   * The element you want the light box to be loaded into.
 * __hash:__ *$element.attr('href')*
   * The path to the file you want loaded. The default assumes you're using an anchor element so it refrences an href attribute. But, as an option, you can use any element.  
-* __loadEvent:__ *'click'*
+* __mouseEvent:__ *'click'*
   * The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event, set this to 'none' and use the public function launch() when you want to the stuff to launch.
 * __iframe:__ *false*
 	* If you'd like to use an iframe set this to true.
@@ -68,7 +68,7 @@ Options can be passed as arguments through the init function.
 ```js
 $('.lbLoad').jfLightBoxLoad({
 	iframe:true,
-	loadEvent:'mouseover',
+	mouseEvent:'mouseover',
 	animationFrom:{opacity:'0', top:'80%'},
 	animationTo:{opacity:'1', top:'50%'},
 	pause:0,
@@ -83,7 +83,7 @@ $('.lbLoad').jfLightBoxLoad({
 Options can also be passed through data attributes in opening of the responsable element. __Notice that the data attributes use dashes instead of camel case__.
 ```html
 <div class="lbLoad" 
-	data-load-event="mouseover" 
+	data-mouse-event="mouseover" 
 	data-hash="externalFile.html"
 	data-path-to-script="externalScript.js"
 >Mouse Over Me</div>
