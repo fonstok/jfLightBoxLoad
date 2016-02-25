@@ -86,24 +86,17 @@ I wanted the structure to be as adaptable as possible, so the default class name
 ```
 
 ## Defaults and Options
-* __center:__ Centers the magnified area in the magnified zone. The alternate is top, left. The default is true.
-* __scale:__ Scale can be changed. The default is 2x.
-* __containment:__ Defines the magnify glass's containment area. The default is set to be its direct parent.
-* __magnifyGlass:__ Defines the magnify glass element (the element you want draggable). The default is '.magnify_glass'.
-* __magnifiedElement:__ Added class name to the cloned or magnified version of the element that has been magnified. This will allow you to select this element in css. The default is '.magnified_element'.
-* __magnifiedZone:__ Area where you want the magnified element to live. The default is set to '.magnify_glass'.
-* __elementToMagnify:__ Identifies the element you want to magnify. The default is '.element_to_magnify'.
-*__loadElement:__ "body",
-*__hash:__$element.attr('href'),
-*__loadEvent:__'click',
-*__ease:__'',
-*__animationFrom:__{},
-*__animationTo:__{},
-*__pause:__100,
-*__speed:__500,
-*__pathToScript:__null,
-*__pathToTransit:__null,
-*__iframe:__false,
+* __loadElement:__ "body"
+* __hash:__ $element.attr('href')
+* __loadEvent:__ 'click'
+* __ease:__''
+* __animationFrom:__ {}
+* __animationTo:__ {}
+* __pause:__ 100
+* __speed:__ 500
+* __pathToScript:__ null,
+* __pathToTransit:__ null
+* __iframe:__ false
 
 ### Options as Arguments
 Options can be passed as arguments through the init function.
@@ -133,13 +126,11 @@ Options can also be passed through data attributes in opening of the parent elem
 ```
 
 ## Public functions
-There are few public functions that can be called.
-* destroy(): This deactivates the plugin
-* scaleMe(number): This can be called to increase or decrease the scale of the magnified element. 
+There is a public function that can be called.
+* launch(): This function can be called to launch the window. It's handy for launching on a unique event like drag stop.
 
 ```js
-$(".magnify").data("jfMagnify").destroy();
-$(".magnify").data("jfMagnify").scaleMe(5);
+$(".lbLoad").data("jfLightBoxLoad").launch();
 ```
 
 ## Credits
