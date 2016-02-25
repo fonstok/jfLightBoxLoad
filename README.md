@@ -90,11 +90,13 @@ Options can also be passed through data attributes in opening of the responsible
 ```
 
 ## Public functions
-There is a public function that can be called.
-* launch(): This function can be called to launch the external filled associated with the element it's attached to. It's handy for launching on a unique event like drag stop or drop. You will most likely need to disable the click functionality by setting the __loadEvent__ to "none".
+There are a few public functions that can be called at any time after init.
+* launch(): This function can be called to launch the external file associated with the element it's attached to. It's handy for launching on a unique event like drag stop or drop. Additionally, you will most likely need to disable the click functionality by setting the __loadEvent__ to "none".
+* destroy(): This deactivates the plugin.
 
 ```js
 $(".lbLoad").data("jfLightBoxLoad").launch();
+$(".lbLoad").data("jfLightBoxLoad").destroy();
 ```
 
 ## Credits
