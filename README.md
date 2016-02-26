@@ -30,6 +30,18 @@ Just follow these steps to enable:
     ```js
     $(".lbLoad").jfLightBoxLoad();
     ```
+## Structure
+These are the elements the plugin creates. If you select the iFrame option *.lb_content* will be an iFrame.
+
+```html
+<div class="lb_lightbox">
+	<div class="lb_shade"></div>
+	<div class="lb_window">
+		<div class="lb_content"><!--stuff gets loaded here --></div>
+		<div class="lb_closeBtn">close</div>
+	</div>
+</div>
+```
 
 ## Options and Defaults
 __Options__ and *Defaults*
@@ -102,19 +114,6 @@ There are a few public functions that can be called at any time after init.
 ```js
 $(".lbLoad").data("jfLightBoxLoad").launch();
 $(".lbLoad").data("jfLightBoxLoad").destroy();
-```
-
-## Structure
-These are the elements the plugin creates. If you select the iFrame option *.lb_content* will be an iFrame.
-
-```html
-<div class="lb_lightbox">
-	<div class="lb_shade"></div>
-	<div class="lb_window">
-		<div class="lb_content"><!--stuff gets loaded here --></div>
-		<div class="lb_closeBtn">close</div>
-	</div>
-</div>
 ```
 
 ## Credits
