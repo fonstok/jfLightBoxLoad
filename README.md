@@ -30,6 +30,7 @@ Just follow these steps to enable:
     ```js
     $(".lbLoad").jfLightBoxLoad();
     ```
+
 ## Structure
 These are the elements the plugin creates. If you select the iFrame option *.lb_content* will be an iFrame.
 
