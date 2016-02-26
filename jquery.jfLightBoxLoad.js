@@ -53,7 +53,7 @@
             if (plugin.settings.iframe){
                 $lb.append('<div class="lb_window"><iframe frameborder="0" src ='+plugin.settings.hash+' width="100%" height:"100%" class="lb_content"></iframe><div class="lb_closeBtn">close</div></div>');
             } else {
-                $lb.append('<div class="lb_window"><div width="100%" height:"100%" class="lb_content"></div><div class="lb_closeBtn">close</div></div>');
+                $lb.append('<div class="lb_window"><div class="lb_content"></div><div class="lb_closeBtn">close</div></div>');
             }
             $lbWin = $('.lb_window');
             $lbWin.css(plugin.settings.animationFrom);

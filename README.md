@@ -104,6 +104,19 @@ $(".lbLoad").data("jfLightBoxLoad").launch();
 $(".lbLoad").data("jfLightBoxLoad").destroy();
 ```
 
+## Structure
+These are the elements the plugin creates. If you select the iFrame option *.lb_content* will be an iFrame.
+
+```html
+<div class="lb_lightbox">
+	<div class="lb_shade"></div>
+	<div class="lb_window">
+		<div class="lb_content"><!--stuff gets loaded here --></div>
+		<div class="lb_closeBtn">close</div>
+	</div>
+</div>
+```
+
 ## Credits
 I used http://stefangabos.ro/jquery/jquery-plugin-boilerplate-revisited/ as a starting point for the plugin.
 
