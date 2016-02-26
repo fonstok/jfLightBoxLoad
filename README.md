@@ -61,6 +61,10 @@ The loading window fades in by default, but you can pass it From and To properti
 	* For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not necessarily the page you're loading.
 * __useTransit:__ *false*
 	* Transit.js is a swell CSS3 jQuery animation plugin. In the HTML, if you link to transit.js before the link to this plugin and set this to true, all of the animations will be CSS3 instead of the older jQuery animate method. http://ricostacruz.com/jquery.transit/
+* __onComplete:__         
+	* You can pass a function to be called when the load is completed.
+* __onCompleteArgs:__ *[]*
+	* If the function to be called when load is completed has arguments, you can pass argument values via an array.
 
 
 ### Options as Arguments
@@ -76,6 +80,7 @@ $('.lbLoad').jfLightBoxLoad({
 	ease:'easeInOutBack',
 	pathToScript:'externalScript.js',
 	useTransit:true,
+	onComplete:function(){console.log("complete")},
   });
 ```
 	

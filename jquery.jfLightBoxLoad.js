@@ -20,6 +20,8 @@
             ease:'swing',
             pathToScript:null,
             useTransit:false,
+            onComplete: function() {}, 
+            onCompleteArgs: [],
         }
         plugin.settings = {};
 
@@ -66,7 +68,7 @@
             $lbshd.animate({opacity:'1'}, plugin.settings.speed);
 
             function loadComplete() {
-                $('.lb_window').delay(plugin.settings.pause).animate(plugin.settings.animationTo, plugin.settings.speed, plugin.settings.ease, callScript);
+                $('.lb_window').delay(plugin.settings.pause).animate(plugin.settings.animationTo, plugin.settings.speed, plugin.settings.ease, completed);
                 $('.lb_loadanimation').animate({opacity:'0'}, plugin.settings.speed*.8, function(){
                     $(this).remove();
                 });     
@@ -77,12 +79,13 @@
                 $('.lb_window').animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease);
             });        
         }
-        function callScript(){
+        function completed(){
             //console.log(plugin.settings.pathToScript)
             if (plugin.settings.pathToScript){
                  $.getScript(plugin.settings.pathToScript, function( data, textStatus, jqxhr ) {
                 });
-            } 
+            }
+            plugin.settings.onComplete.apply(plugin,plugin.settings.onCompleteArgs); 
         }
         // delete the tags
         function closeLB(){
