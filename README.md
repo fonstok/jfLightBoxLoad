@@ -63,8 +63,8 @@ The loading window fades in by default, but you can pass it From and To properti
 	* Transit.js is a swell CSS3 jQuery animation plugin. In the HTML, if you link to transit.js before the link to this plugin and set this to true, all of the animations will be CSS3 instead of the older jQuery animate method. http://ricostacruz.com/jquery.transit/
 * __onComplete:__         
 	* You can pass a function to be called when the load is completed.
-* __onCompleteArgs:__ *[]*
-	* If the function to be called when load is completed has arguments, you can pass argument values via an array.
+* __onCompleteArgs:__
+	* If the function to be called when load is completed has arguments, you can pass argument values via an array ['arg1', 'arg2'].
 
 
 ### Options as Arguments
