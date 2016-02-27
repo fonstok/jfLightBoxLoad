@@ -13,9 +13,9 @@
             hash:$element.attr('href'),
             mouseEvent:'click',
             iframe:false,
-            animationFrom:{},
-            animationTo:{},
-            pause:100,
+            animationFrom:{opacity:'0'},
+            animationTo:{opacity:'1'},
+            pause:200,
             speed:500,
             ease:'swing',
             pathToScript:null,
@@ -45,37 +45,47 @@
             event.preventDefault();              
             lightBoxAcivate();
         };
-
         // activate
         function lightBoxAcivate(){
             win = true;
             // call on start function
             plugin.settings.onStart.apply(plugin,plugin.settings.onStartArgs);
             // make tags
-            $ldElement.prepend('<div class="lb_lightbox"></div>');
-            $lb = $('.lb_lightbox');  
-            $lb.append('<div class="lb_shade"></div><div class="lb_loadanimation">loading</div>');
-            // iframe?
-            if (plugin.settings.iframe){
-                $lb.append('<div class="lb_window"><iframe frameborder="0" src ='+plugin.settings.hash+' width="100%" height:"100%" class="lb_content"></iframe><div class="lb_closeBtn">close</div></div>');
-            } else {
-                $lb.append('<div class="lb_window"><div class="lb_content"></div><div class="lb_closeBtn">close</div></div>');
-            }
-            $lbWin = $('.lb_window');
-            $lbWin.css(plugin.settings.animationFrom);
+            var tag = new Array();
+            tag.push('<div class="lb_lightbox">');
+            tag.push('<div class="lb_shade"></div>');
+            tag.push('<div class="lb_loadAnimation">loading</div>');
             
-            if (!plugin.settings.iframe){
-                $('.lb_content').load(plugin.settings.hash, loadComplete);
+            if (plugin.settings.iframe){
+                tag.push('<div class="lb_window"><iframe frameborder="0" src ='+plugin.settings.hash+' width="100%" height:"100%" class="lb_content"></iframe><div class="lb_closeBtn">close</div></div>');
             } else {
+                tag.push('<div class="lb_window"><div class="lb_content"></div><div class="lb_closeBtn">close</div></div>');
+            }
+            tag.push('</div>');
+            var tagString = '';
+            $(tag).each(function(index, element){
+                tagString+=element;
+            });
+            $ldElement.append(tagString);
+            // cache objects 
+            $lb = $('.lb_lightbox');  
+            $lbWin = $('.lb_window');
+
+            
+            if (plugin.settings.iframe){
                 $('.lb_content').load(loadComplete);
+            } else {
+               $('.lb_content').load(plugin.settings.hash, loadComplete); 
             }
             $lbshd = $('.lb_shade');
             $lbshd.css({opacity:'0'});
             $lbshd.animate({opacity:'1'}, plugin.settings.speed);
 
+            $lbWin.css(plugin.settings.animationFrom);
             function loadComplete() {
-                $('.lb_window').delay(plugin.settings.pause).animate(plugin.settings.animationTo, plugin.settings.speed, plugin.settings.ease, completed);
-                $('.lb_loadanimation').animate({opacity:'0'}, plugin.settings.speed*.8, function(){
+                $lbWin.delay(plugin.settings.pause).animate(plugin.settings.animationTo, plugin.settings.speed, plugin.settings.ease, completed);
+                $('.lb_loadAnimation').animate({opacity:'0'});
+                $('.lb_loadAnimation').animate({opacity:'0'}, plugin.settings.speed*.8, function(){
                     $(this).remove();
                 });     
             };
@@ -83,12 +93,12 @@
             $('.lb_closeBtn, .lb_shade').bind('click',function(e){
                 // call on close function
                 plugin.settings.onClose.apply(plugin,plugin.settings.onCloseArgs);
+
                 $lb.animate({opacity:'0'},plugin.settings.speed, "", closeLB);
-                $('.lb_window').animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease);
+                $lbWin.animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease);
             });        
         }
         function completed(){
-            //console.log(plugin.settings.pathToScript)
             if (plugin.settings.pathToScript){
                  $.getScript(plugin.settings.pathToScript, function( data, textStatus, jqxhr ) {
                 });

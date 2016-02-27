@@ -37,6 +37,7 @@ These are the elements the plugin creates. If you select the iFrame option *.lb_
 ```html
 <div class="lb_lightbox">
 	<div class="lb_shade"></div>
+	<div class="lb_loadAnimation">loading</div>
 	<div class="lb_window">
 		<div class="lb_content"><!--stuff gets loaded here --></div>
 		<div class="lb_closeBtn">close</div>
@@ -47,7 +48,8 @@ These are the elements the plugin creates. If you select the iFrame option *.lb_
 ### Classes
 * __.lb_lightbox__: The Main element.
 * __.lb_shade__: The backdrop area.
-* __.lb_window__: The frame of the content area.
+* __.lb_shade__: The backdrop area.
+* __.lb_loadAnimation__: The loading animation.
 * __.lb_content__: Where the external file will be loaded. If you choose iframe this will be an iFrame element.
 * __.lb_closeBtn__: The close button.
 
@@ -61,9 +63,9 @@ __Options__ and *Defaults*
 
 #### Window Animation
 The loading window fades in by default, but you can pass it From and To properties via lists to change its animation in and out. The out will be the reverse of what ever you set.
-* __animationFrom:__ *{}*  The load window's animation starting properties.
-* __animationTo:__ *{}*  The load window's animation ending properties.
-* __pause:__ *100*  Pause time before the window comes in.
+* __animationFrom:__ *{opacity:'0'}*  The load window's animation starting properties.
+* __animationTo:__ *{opacity:'1'}*  The load window's animation ending properties.
+* __pause:__ *200*  Pause time before the window comes in.
 * __speed:__ *500*  Speed of window animation.
 * __ease:__ *none*  You can pass the animation an ease, but you need to link to a library such as, jqueryUI, that has ease options.
 
