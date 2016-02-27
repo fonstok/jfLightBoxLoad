@@ -10,9 +10,15 @@ body {
 	margin-right: auto;
 	margin-left: auto;
 }
+.dragg {
+	width:150px;
+	padding: 5px;
+	background-color: #666;
+	text-align: center;
+}
 .drop-zone {
 	position: absolute;
-	top:10px;
+	top:50%;
 	right:0px;
 	width: 200px;
 	height: 200px;

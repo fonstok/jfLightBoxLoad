@@ -4,20 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="apple-mobile-web-app-capable" content="yes"/>
 <title>jfLightBoxLoad</title>
-<link href="../jfLightBoxLoad.css" rel="stylesheet" type="text/css" />
+<link href="../../jfLightBoxLoad.css" rel="stylesheet" type="text/css" />
 <link href="index.css" rel="stylesheet" type="text/css" />
 
 <script src="http://code.jquery.com/jquery.min.js"></script>
 <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.transit/0.9.12/jquery.transit.min.js"></script>
-<script type="text/javascript" src="../jquery.jfLightBoxLoad.js"></script>
+<script type="text/javascript" src="../../jquery.jfLightBoxLoad.js"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
-  /* ===== Basic example */
-  $('.lboxBasic').jfLightBoxLoad({});
-  /* Basic example */
-
   /* ===== Advanced example */
   $('.lboxAdvanced').jfLightBoxLoad({
     animationFrom:{opacity:'0', top:'80%'},
@@ -25,7 +21,14 @@ $(document).ready(function() {
     useTransit:true,
     ease:'easeInOutBack',
   });   
-  /* Advanced example */
+  $('.dragg').draggable();
+  $('.drop-zone').droppable({
+    drop:function(event, ui){
+      console.log("dr")
+      $(this).data('jfLightBoxLoad').launch();
+    },
+    accept:'.dragg',
+  });
 });
 </script>
 
@@ -34,11 +37,14 @@ $(document).ready(function() {
 
 <body>
 <div id="shell">
-    <h1>jfLightBoxLoad</h1>
-    <ul>
-      <li><a class="lboxBasic" href="external.html">Load From Anchor Click</a></li>
-      <li class="lboxAdvanced" data-mouse-event="mouseup" data-iframe="true" data-hash="external.html">Load on Mouseup</li>
-    </ul>    
-  </div>
+    <h1>jfLightBoxLoad</h1>  
+    <div 
+      class="lboxAdvanced drop-zone"
+      data-mouse-event="none" 
+      data-hash="external.html">
+      <h2>Drop Zone</h2>
+    </div>
+    <div class="dragg">Load on Dragg Dropped</div>
+</div>
 </body>
 </html>

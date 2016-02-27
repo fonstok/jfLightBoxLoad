@@ -1,5 +1,5 @@
 # jfLightBoxLoad
-jQuery plugin that loads external files via ajax loading or an iframe with a lightbox effect. 
+jQuery plugin designed to load external html files via ajax loading or an iframe with a lightbox effect. 
 
 ##Note
 Because it uses ajax loading, to test locally, you will need either allow local file access or use a local server like MAMP.
@@ -44,13 +44,20 @@ These are the elements the plugin creates. If you select the iFrame option *.lb_
 </div>
 ```
 
+### Classes
+* __.lb_lightbox__: The Main element.
+* __.lb_shade__: The backdrop area.
+* __.lb_window__: The frame of the content area.
+* __.lb_content__: Where the external file will be loaded. If you choose iframe this will be an iFrame element.
+* __.lb_closeBtn__: The close button.
+
 ## Options and Defaults
 __Options__ and *Defaults*
 #### Basics
 * __loadElement:__ *'body'*
   * The element you want the light box to be loaded into.
 * __hash:__ *$element.attr('href')*
-  * The path to the file you want loaded. The default assumes you're using an anchor element so it references an href attribute. But, as an option, you can use any element.  
+  * The path to the file you want loaded. The default assumes you're using an anchor element so it references its href attribute. But, because this an option, you can use any element.  
 * __mouseEvent:__ *'click'*
   * The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event, set this to 'none' and use the public function launch() when you want the file to launch and load.
 * __iframe:__ *false*
@@ -74,10 +81,18 @@ The loading window fades in by default, but you can pass it From and To properti
 	* For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not necessarily the page you're loading.
 * __useTransit:__ *false*
 	* Transit.js is a swell CSS3 jQuery animation plugin. In the HTML, if you link to transit.js before the link to this plugin and set this to true, all of the animations will be CSS3 instead of the older jQuery animate method. http://ricostacruz.com/jquery.transit/
+* __onStart:__         
+	* You can pass a function to be called when the load has started.
+* __onStartArgs:__
+	* If the onStart function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
 * __onComplete:__         
 	* You can pass a function to be called when the load is completed.
 * __onCompleteArgs:__
-	* If the function to be called when load is completed has arguments, you can pass argument values via an array ['arg1', 'arg2'].
+	* If the onComplete function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
+* __onClose:__         
+	* You can pass a function to be called when the window is closed.
+* __onCloseArgs:__
+	* If the onClose function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
 
 
 ### Options as Arguments

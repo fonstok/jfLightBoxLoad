@@ -20,8 +20,12 @@
             ease:'swing',
             pathToScript:null,
             useTransit:false,
+            onStart: function() {}, 
+            onStartArgs: [],
             onComplete: function() {}, 
             onCompleteArgs: [],
+            onClose: function() {}, 
+            onCloseArgs: [],
         }
         plugin.settings = {};
 
@@ -45,6 +49,8 @@
         // activate
         function lightBoxAcivate(){
             win = true;
+            // call on start function
+            plugin.settings.onStart.apply(plugin,plugin.settings.onStartArgs);
             // make tags
             $ldElement.prepend('<div class="lb_lightbox"></div>');
             $lb = $('.lb_lightbox');  
@@ -75,6 +81,8 @@
             };
             // add close functionality
             $('.lb_closeBtn, .lb_shade').bind('click',function(e){
+                // call on close function
+                plugin.settings.onClose.apply(plugin,plugin.settings.onCloseArgs);
                 $lb.animate({opacity:'0'},plugin.settings.speed, "", closeLB);
                 $('.lb_window').animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease);
             });        
