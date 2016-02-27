@@ -65,32 +65,21 @@ __Options__ and *Defaults*
 
 #### Window Animation
 The loading window fades in by default, but you can pass it From and To properties via lists to change its animation in and out. The out will be the reverse of what ever you set.
-* __animationFrom:__ *{}*
-	* The load window's animation starting properties.
-* __animationTo:__ *{}*
-	* The load window's animation ending properties.
-* __pause:__ *100* 
-	* Pause time before the window comes in.
-* __speed:__ *500*
-	* Speed of window animation.
-* __ease:__ *none*
-	* You can pass the animation an ease, but you need to link to a library such as, jqueryUI, that has ease options.
+* __animationFrom:__ *{}*  The load window's animation starting properties.
+* __animationTo:__ *{}*  The load window's animation ending properties.
+* __pause:__ *100*  Pause time before the window comes in.
+* __speed:__ *500*  Speed of window animation.
+* __ease:__ *none*  You can pass the animation an ease, but you need to link to a library such as, jqueryUI, that has ease options.
 
 #### Other Options
-* __pathToScript:__ *null*
-	For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not necessarily the page you're loading.
-* __useTransit:__ *false*
-	Transit.js is a swell CSS3 jQuery animation plugin. In the HTML, if you link to transit.js before the link to this plugin and set this to true, all of the animations will be CSS3 instead of the older jQuery animate method. http://ricostacruz.com/jquery.transit/
-* __onStart:__         
-	You can pass a function to be called when the load has started.
-* __onStartArgs:__
-	If the onStart function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
+* __pathToScript:__ *null*  For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not necessarily the page you're loading.
+* __useTransit:__ *false*  Transit.js is a swell CSS3 jQuery animation plugin. In the HTML, if you link to transit.js before the link to this plugin and set this to true, all of the animations will be CSS3 instead of the older jQuery animate method. http://ricostacruz.com/jquery.transit/
+* __onStart:__  You can pass a function to be called when the load has started.
+* __onStartArgs:__  If the onStart function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
 * __onComplete:__ You can pass a function to be called when the load is completed.
 * __onCompleteArgs:__ If the onComplete function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
-* __onClose:__         
-	* You can pass a function to be called when the window is closed.
-* __onCloseArgs:__
-	* If the onClose function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
+* __onClose:__  You can pass a function to be called when the window is closed.
+* __onCloseArgs:__  If the onClose function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
 
 
 ### Options as Arguments
