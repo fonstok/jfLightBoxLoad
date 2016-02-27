@@ -1,6 +1,21 @@
-<link href="external.css" rel="stylesheet" type="text/css" />
+<style>
+#external *{
+	margin-top: 0px;
+	box-sizing:border-box;
+}
+#external h2 {
+	font-size: 4em;
+	font-family: Arial, Helvetica, sans-serif;
+}
+#external p {
+	color:#333;
+	font-size: .9em;
+	line-height: 1.45em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+</style>
 
-<section id="test">
+<section id="external">
 	<h2>Testing HTML</h2>
 	<p>This is an external HTML page being loaded into the lb_content div created by the lightbox plugin.</p>
 	<p>This is just information and HTML mark up. Only the tags in the body get loaded (this includes div tags), not any external CSS or js. Styling this content should be done in your main CSS file as if this information and tags already existed on the page you're loading it into.</p>

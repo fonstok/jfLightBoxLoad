@@ -56,6 +56,7 @@
             tag.push('<div class="lb_shade"></div>');
             tag.push('<div class="lb_loadAnimation">loading</div>');
             
+            
             if (plugin.settings.iframe){
                 tag.push('<div class="lb_window"><iframe frameborder="0" src ='+plugin.settings.hash+' width="100%" height:"100%" class="lb_content"></iframe><div class="lb_closeBtn">close</div></div>');
             } else {
@@ -66,7 +67,7 @@
             $(tag).each(function(index, element){
                 tagString+=element;
             });
-            $ldElement.append(tagString);
+            $ldElement.prepend(tagString);
             // cache objects 
             $lb = $('.lb_lightbox');  
             $lbWin = $('.lb_window');
