@@ -54,14 +54,10 @@ These are the elements the plugin creates. If you select the iFrame option *.lb_
 ## Options and Defaults
 __Options__ and *Defaults*
 #### Basics
-* __loadElement:__ *'body'*
-  * The element you want the light box to be loaded into.
-* __hash:__ *$element.attr('href')*
-  * The path to the file you want loaded. The default assumes you're using an anchor element so it references its href attribute. But, because this an option, you can use any element.  
-* __mouseEvent:__ *'click'*
-  * The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event, set this to 'none' and use the public function launch() when you want the file to launch and load.
-* __iframe:__ *false*
-	* If you'd like to use an iframe set this to true.
+* __loadElement:__ *'body'* The element you want the light box to be loaded into.
+* __hash:__ *$element.attr('href')* The path to the file you want loaded. The default assumes you're using an anchor element so it references its href attribute. But, because this an option, you can use any element.  
+* __mouseEvent:__ *'click'* The mouse event that you want to trigger the loading. If you're not wanting it to trigger on a mouse event, set this to 'none' and use the public function launch() when you want the file to launch and load.
+* __iframe:__ *false* If you'd like to use an iframe set this to true.
 
 #### Window Animation
 The loading window fades in by default, but you can pass it From and To properties via lists to change its animation in and out. The out will be the reverse of what ever you set.
