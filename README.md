@@ -118,10 +118,10 @@ There are a few public functions that can be called at any time after init.
 * __init():__ This initates the plugin, this gets called automatically. 
 
 ```js
-$(".lbLoad").data("jfLightBoxLoad").init();
 $(".lbLoad").data("jfLightBoxLoad").launch();
 $(".lbLoad").data("jfLightBoxLoad").close();
 $(".lbLoad").data("jfLightBoxLoad").destroy();
+$(".lbLoad").data("jfLightBoxLoad").init();
 ```
 
 ## Credits
