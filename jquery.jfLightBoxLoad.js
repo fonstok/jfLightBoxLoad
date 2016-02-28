@@ -24,8 +24,8 @@
             onStartArgs: [],
             onComplete: function() {}, 
             onCompleteArgs: [],
-            onClose: function() {}, 
-            onCloseArgs: [],
+            onClosed: function() {}, 
+            onClosedArgs: [],
         }
         plugin.settings = {};
 
@@ -111,7 +111,7 @@
                 $('.lb_content').unload();
                 $('.lb_closeBtn, .lb_shade').unbind('click');
                 $lb.remove();
-                plugin.settings.onClose.apply(plugin,plugin.settings.onCloseArgs);
+                plugin.settings.onClosed.apply(plugin,plugin.settings.onClosedArgs);
                 win = false;
             });  
         }  

@@ -78,8 +78,8 @@ The window fades in by default, but you can pass it From and To properties via l
 * __onStartArgs:__  If the onStart function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
 * __onComplete:__ You can pass a function to be called when the load is completed.
 * __onCompleteArgs:__ If the onComplete function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
-* __onClose:__  You can pass a function to be called when the window is closed.
-* __onCloseArgs:__  If the onClose function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
+* __onClosed:__  You can pass a function to be called when the window is closed.
+* __onClosedArgs:__  If the onClose function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
 
 
 ### Options as Arguments
@@ -97,7 +97,7 @@ $('.lbLoad').jfLightBoxLoad({
 	useTransit:true,
 	onStart:function(){console.log("started")},
 	onComplete:function(){console.log("complete")},
-	onClose:function(){console.log("closed")},
+	onClosed:function(){console.log("closed")},
   });
 ```
 	
