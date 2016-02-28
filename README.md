@@ -62,16 +62,18 @@ __Options__ and *Defaults*
 * __iframe:__ *false* If you'd like to use an iframe set this to true.
 
 #### Window Animation
-The loading window fades in by default, but you can pass it From and To properties via lists to change its animation in and out. The out will be the reverse of what ever you set.
+The window fades in by default, but you can pass it From and To properties via lists and CSS properties to change its animation. The out will be the reverse of what ever you set.
 * __animationFrom:__ *{opacity:'0'}*  The load window's animation starting properties.
 * __animationTo:__ *{opacity:'1'}*  The load window's animation ending properties.
 * __pause:__ *200*  Pause time before the window comes in.
 * __speed:__ *500*  Speed of window animation.
-* __ease:__ *none*  You can pass the animation an ease, but you need to link to a library such as, jqueryUI, that has ease options.
+* __ease:__ *swing*  You can pass the animation an ease, __but you must to link to a library or plugin such as, jqueryUI, that includes ease options__.
 
-#### Other Options
+#### Misc Options
 * __pathToScript:__ *null*  For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not necessarily the page you're loading.
 * __useTransit:__ *false*  Transit.js is a swell CSS3 jQuery animation plugin. In the HTML, if you link to transit.js before the link to this plugin and set this to true, all of the animations will be CSS3 instead of the older jQuery animate method. http://ricostacruz.com/jquery.transit/
+
+#### Passing Functions
 * __onStart:__  You can pass a function to be called when the load has started.
 * __onStartArgs:__  If the onStart function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
 * __onComplete:__ You can pass a function to be called when the load is completed.
@@ -93,7 +95,9 @@ $('.lbLoad').jfLightBoxLoad({
 	ease:'easeInOutBack',
 	pathToScript:'externalScript.js',
 	useTransit:true,
+	onStart:function(){console.log("started")},
 	onComplete:function(){console.log("complete")},
+	onClose:function(){console.log("closed")},
   });
 ```
 	
@@ -110,10 +114,14 @@ Options can also be passed through data attributes in the opening of the attache
 ## Public functions
 There are a few public functions that can be called at any time after init.
 * launch(): This function can be called to launch the external file associated with the element it's attached to. It's handy for launching on a unique event like drag stop or drop. Additionally, you will most likely need to disable the click functionality by setting the __loadEvent__ to "none".
+* close(): This closes the window.
 * destroy(): This deactivates the plugin.
+* init(): This initates the plugin, this gets called automatically. 
 
 ```js
+$(".lbLoad").data("jfLightBoxLoad").init();
 $(".lbLoad").data("jfLightBoxLoad").launch();
+$(".lbLoad").data("jfLightBoxLoad").close();
 $(".lbLoad").data("jfLightBoxLoad").destroy();
 ```
 

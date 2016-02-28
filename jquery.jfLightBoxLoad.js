@@ -90,37 +90,37 @@
                     $(this).remove();
                 });     
             };
-            // add close functionality
-            $('.lb_closeBtn, .lb_shade').bind('click',function(e){
-                // call on close function
-                plugin.settings.onClose.apply(plugin,plugin.settings.onCloseArgs);
-
-                $lb.animate({opacity:'0'},plugin.settings.speed, "", closeLB);
-                $lbWin.animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease);
-            });        
+                  
         }
         function completed(){
+            // add close functionality
+            $('.lb_closeBtn, .lb_shade').bind('click',plugin.close); 
+            // launch script
             if (plugin.settings.pathToScript){
                  $.getScript(plugin.settings.pathToScript, function( data, textStatus, jqxhr ) {
                 });
             }
+            // call on complete function
             plugin.settings.onComplete.apply(plugin,plugin.settings.onCompleteArgs); 
         }
-        // delete the tags
-        function closeLB(){
-            win = false;
-            $('.lb_content').unload();
-            $('.lb_closeBtn, .lb_shade').unbind('click');
-            $lb.remove();  
+
+        // ------------ public functions
+        plugin.close = function(){
+            $lbWin.animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease);
+            $lb.animate({opacity:'0'},plugin.settings.speed, "", function(){      
+                $('.lb_content').unload();
+                $('.lb_closeBtn, .lb_shade').unbind('click');
+                $lb.remove();
+                plugin.settings.onClose.apply(plugin,plugin.settings.onCloseArgs);
+                win = false;
+            });  
         }  
-        // public functions
         plugin.launch = function(){
             lightBoxAcivate();
         };
-
         plugin.destroy = function(){
             if (win){
-                closeLB();
+                plugin.close();
             }  
             $element.unbind(plugin.settings.mouseEvent, onMouse)
             $element.removeData('jfLightBoxLoad', plugin);
