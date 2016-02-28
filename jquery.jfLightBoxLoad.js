@@ -85,7 +85,6 @@
             $lbWin.css(plugin.settings.animationFrom);
             function loadComplete() {
                 $lbWin.delay(plugin.settings.pause).animate(plugin.settings.animationTo, plugin.settings.speed, plugin.settings.ease, completed);
-                $('.lb_loadAnimation').animate({opacity:'0'});
                 $('.lb_loadAnimation').animate({opacity:'0'}, plugin.settings.speed*.8, function(){
                     $(this).remove();
                 });     
