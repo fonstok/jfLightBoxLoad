@@ -15,7 +15,7 @@
             iframe:false,
             animationFrom:{opacity:'0'},
             animationTo:{opacity:'1'},
-            pause:200,
+            pause:0,
             speed:500,
             ease:'swing',
             pathToScript:null,
@@ -100,7 +100,6 @@
             // call on complete function
             plugin.settings.onComplete.apply(plugin,plugin.settings.onCompleteArgs); 
         }
-
         plugin.close = function(){
             $lbWin.animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease);
             $lb.animate({opacity:'0'},plugin.settings.speed, "", function(){      

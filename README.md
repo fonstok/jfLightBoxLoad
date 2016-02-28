@@ -65,7 +65,7 @@ __Options__ and *Defaults*
 The window fades in by default, but you can pass it From and To properties via lists and CSS properties to change its animation. The out will be the reverse of what ever you set.
 * __animationFrom:__ *{opacity:'0'}*  The load window's animation starting properties.
 * __animationTo:__ *{opacity:'1'}*  The load window's animation ending properties.
-* __pause:__ *200*  Pause time before the window comes in.
+* __pause:__ *0*  Pause time before the window comes in.
 * __speed:__ *500*  Speed of window animation.
 * __ease:__ *swing*  You can pass the animation an ease, __but you must to link to a library or plugin such as, jqueryUI, that includes ease options__.
 

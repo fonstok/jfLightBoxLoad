@@ -1,15 +1,11 @@
 @charset "UTF-8";
-
+/* light box */
 .lb_lightbox, .lb_lightbox > div {
 	box-sizing:border-box;
 }
-
-
-/* light box */
 .lb_lightbox {
-	position:fixed;
-	/* z-index needs to be higher than any other elements in your page */
-	z-index:200;
+	position:fixed; /*un-fix if you're not loading into body*/
+	z-index:200;/* z-index needs to be higher than any other elements in your page */
 	top:0px;
 	left:0px;
 	width:100%;
