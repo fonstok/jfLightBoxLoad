@@ -66,7 +66,7 @@ The window fades in by default, but you can pass it From and To properties via l
 * __animationTo:__ *{opacity:'1'}*  The load window's animation ending properties.
 * __pause:__ *0*  Pause time before the window comes in.
 * __speed:__ *500*  Speed of window animation.
-* __ease:__ *swing*  You can pass the animation an ease, __but you must to link to a library or plugin such as, jqueryUI, that includes ease options__.
+* __ease:__ *'swing'*  You can pass the animation an ease, __but you must to link to a library or plugin such as, jqueryUI, that includes ease options__.
 
 #### Misc Options
 * __pathToScript:__ *null*  For straight loading you may want to trigger an external script after loading is completed – you pass the path here. Keep in mind that the path should be relative to the page you're loading into, not necessarily the page you're loading.
