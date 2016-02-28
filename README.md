@@ -30,6 +30,7 @@ Just follow these steps to enable:
     ```js
     $(".lbLoad").jfLightBoxLoad();
     ```
+    
 ## Options and Defaults
 __Options__ and *Defaults*
 #### Basics
@@ -57,7 +58,6 @@ The window fades in by default, but you can pass it From and To properties via l
 * __onCompleteArgs:__ If the onComplete function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
 * __onClosed:__  You can pass a function to be called when the window is closed.
 * __onClosedArgs:__  If the onClose function has arguments, you can pass argument values via an array ['arg1', 'arg2'].
-
 
 ### Options as Arguments
 Options can be passed as arguments through the init function.
