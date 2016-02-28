@@ -112,10 +112,10 @@ Options can also be passed through data attributes in the opening of the attache
 
 ## Public functions
 There are a few public functions that can be called at any time after init.
-* launch(): This function can be called to launch the external file associated with the element it's attached to. It's handy for launching on a unique event like drag stop or drop. Additionally, you will most likely need to disable the click functionality by setting the __loadEvent__ to "none".
-* close(): This closes the window.
-* destroy(): This deactivates the plugin.
-* init(): This initates the plugin, this gets called automatically. 
+* __launch():__ This function can be called to launch the external file associated with the element it's attached to. It's handy for launching on a unique event like drag stop or drop. Additionally, you will most likely need to disable the click functionality by setting the __loadEvent__ to "none".
+* __close():__ This closes the window.
+* __destroy():__ This deactivates the plugin.
+* __init():__ This initates the plugin, this gets called automatically. 
 
 ```js
 $(".lbLoad").data("jfLightBoxLoad").init();
