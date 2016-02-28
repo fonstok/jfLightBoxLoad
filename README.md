@@ -30,29 +30,6 @@ Just follow these steps to enable:
     ```js
     $(".lbLoad").jfLightBoxLoad();
     ```
-
-## Structure
-These are the elements the plugin creates. If you select the iFrame option *.lb_content* will be an iFrame.
-
-```html
-<div class="lb_lightbox">
-	<div class="lb_shade"></div>
-	<div class="lb_loadAnimation">loading</div>
-	<div class="lb_window">
-		<div class="lb_content"><!--stuff gets loaded here --></div>
-		<div class="lb_closeBtn">close</div>
-	</div>
-</div>
-```
-
-### Classes
-* __.lb_lightbox__: The main parent element of lightboxload.
-* __.lb_shade__: The backdrop area.
-* __.lb_loadAnimation__: The loading animation.
-* __.lb_window__: The parent of the content area and close button. Gives you a layer to work with.
-* __.lb_content__: Where the external file will be loaded. If you choose iframe this will be an iFrame element.
-* __.lb_closeBtn__: The close button.
-
 ## Options and Defaults
 __Options__ and *Defaults*
 #### Basics
@@ -124,6 +101,27 @@ $(".lbLoad").data("jfLightBoxLoad").close();
 $(".lbLoad").data("jfLightBoxLoad").destroy();
 $(".lbLoad").data("jfLightBoxLoad").init();
 ```
+## Structure
+These are the elements the plugin creates. If you select the iFrame option *.lb_content* will be an iFrame.
+
+```html
+<div class="lb_lightbox">
+	<div class="lb_shade"></div>
+	<div class="lb_loadAnimation">loading</div>
+	<div class="lb_window">
+		<div class="lb_content"><!--stuff gets loaded here --></div>
+		<div class="lb_closeBtn">close</div>
+	</div>
+</div>
+```
+
+### Classes
+* __.lb_lightbox__: The main parent element of lightboxload.
+* __.lb_shade__: The backdrop area.
+* __.lb_loadAnimation__: The loading animation.
+* __.lb_window__: The parent of the content area and close button. Gives you a layer to work with.
+* __.lb_content__: Where the external file will be loaded. If you choose iframe this will be an iFrame element.
+* __.lb_closeBtn__: The close button.
 
 ## Credits
 I used http://stefangabos.ro/jquery/jquery-plugin-boilerplate-revisited/ as a starting point for the plugin.
