@@ -49,6 +49,7 @@ These are the elements the plugin creates. If you select the iFrame option *.lb_
 * __.lb_lightbox__: The Main element.
 * __.lb_shade__: The backdrop area.
 * __.lb_loadAnimation__: The loading animation.
+* __.lb_window__: The parent of the content area and close button. Gives you a layer to work with.
 * __.lb_content__: Where the external file will be loaded. If you choose iframe this will be an iFrame element.
 * __.lb_closeBtn__: The close button.
 
