@@ -46,7 +46,7 @@ These are the elements the plugin creates. If you select the iFrame option *.lb_
 ```
 
 ### Classes
-* __.lb_lightbox__: The Main element.
+* __.lb_lightbox__: The main parent element of lightboxload.
 * __.lb_shade__: The backdrop area.
 * __.lb_loadAnimation__: The loading animation.
 * __.lb_window__: The parent of the content area and close button. Gives you a layer to work with.
