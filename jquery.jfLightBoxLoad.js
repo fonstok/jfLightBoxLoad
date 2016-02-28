@@ -43,10 +43,10 @@
         // mouse event
         function onMouse(event){
             event.preventDefault();              
-            lightBoxAcivate();
+            plugin.launch();
         };
-        // activate
-        function lightBoxAcivate(){
+        // launch function
+        plugin.launch = function(){
             win = true;
             // call on start function
             plugin.settings.onStart.apply(plugin,plugin.settings.onStartArgs);
@@ -55,14 +55,15 @@
             tag.push('<div class="lb_lightbox">');
             tag.push('<div class="lb_shade"></div>');
             tag.push('<div class="lb_loadAnimation">loading</div>');
-            
-            
+            tag.push('<div class="lb_window">');
+            // iframe ?
             if (plugin.settings.iframe){
-                tag.push('<div class="lb_window"><iframe frameborder="0" src ='+plugin.settings.hash+' width="100%" height:"100%" class="lb_content"></iframe><div class="lb_closeBtn">close</div></div>');
+                tag.push('<iframe class="lb_content" frameborder="0" src ='+plugin.settings.hash+' width="100%" height:"100%"></iframe>');
             } else {
-                tag.push('<div class="lb_window"><div class="lb_content"></div><div class="lb_closeBtn">close</div></div>');
+                tag.push('<div class="lb_content"></div>');
             }
-            tag.push('</div>');
+            tag.push('<div class="lb_closeBtn">close</div>');
+            tag.push('</div></div>');
             var tagString = '';
             $(tag).each(function(index, element){
                 tagString+=element;
@@ -71,39 +72,35 @@
             // cache objects 
             $lb = $('.lb_lightbox');  
             $lbWin = $('.lb_window');
-
-            
+            // load into content or iframe ?
             if (plugin.settings.iframe){
                 $('.lb_content').load(loadComplete);
             } else {
                $('.lb_content').load(plugin.settings.hash, loadComplete); 
             }
-            $lbshd = $('.lb_shade');
-            $lbshd.css({opacity:'0'});
-            $lbshd.animate({opacity:'1'}, plugin.settings.speed);
-
+            // shade animation
+            $('.lb_shade').css({opacity:'0'})
+                .animate({opacity:'1'}, plugin.settings.speed);
+            // set, load, and animate window
             $lbWin.css(plugin.settings.animationFrom);
             function loadComplete() {
                 $lbWin.delay(plugin.settings.pause).animate(plugin.settings.animationTo, plugin.settings.speed, plugin.settings.ease, completed);
                 $('.lb_loadAnimation').animate({opacity:'0'}, plugin.settings.speed*.8, function(){
                     $(this).remove();
                 });     
-            };
-                  
+            };          
         }
         function completed(){
             // add close functionality
             $('.lb_closeBtn, .lb_shade').bind('click',plugin.close); 
-            // launch script
+            // launch external script
             if (plugin.settings.pathToScript){
-                 $.getScript(plugin.settings.pathToScript, function( data, textStatus, jqxhr ) {
-                });
+                 $.getScript(plugin.settings.pathToScript);
             }
             // call on complete function
             plugin.settings.onComplete.apply(plugin,plugin.settings.onCompleteArgs); 
         }
 
-        // ------------ public functions
         plugin.close = function(){
             $lbWin.animate(plugin.settings.animationFrom, plugin.settings.speed, plugin.settings.ease);
             $lb.animate({opacity:'0'},plugin.settings.speed, "", function(){      
@@ -114,9 +111,6 @@
                 win = false;
             });  
         }  
-        plugin.launch = function(){
-            lightBoxAcivate();
-        };
         plugin.destroy = function(){
             if (win){
                 plugin.close();
