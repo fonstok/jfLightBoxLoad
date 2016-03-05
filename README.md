@@ -1,5 +1,5 @@
 # jfLightBoxLoad
-jQuery plugin designed to load external html files via ajax loading or an iframe with a lightbox effect. 
+jQuery plugin designed to load external html files via ajax loading with or without an iframe with a lightbox style effect. 
 
 ##Note
 Because it uses ajax loading, to test locally, you will need either allow local file access or use a local server like MAMP.
