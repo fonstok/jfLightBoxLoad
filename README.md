@@ -1,13 +1,13 @@
 # jfLightBoxLoad
 jQuery plugin designed to load external html files via ajax loading with or without an iframe with a lightbox style effect. 
 
-##Note
+## Note
 Because it uses ajax loading, to test locally, you will need either allow local file access or use a local server like MAMP.
-####Launch Chrome with allow file access
+#### Launch Chrome with allow file access
 * http://www.chrome-allow-file-access-from-file.com/
 * http://blog.derraab.com/2013/05/30/start-google-chrome-with-local-file-access-on-mac-os-x/
 
-####MAMP
+#### MAMP
 * https://www.mamp.info/en/
 
 
